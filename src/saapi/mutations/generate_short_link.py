@@ -1,5 +1,5 @@
-from enum import StrEnum
-from typing import TypedDict, Required, NotRequired, List
+from typing_extensions import TypedDict, Required, NotRequired, List
+from ..str_enum import StrEnum
 from ..query_base import QueryBase, QueryType
 from ..authentication import Authentication
 

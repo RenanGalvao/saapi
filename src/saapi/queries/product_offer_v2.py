@@ -1,5 +1,6 @@
-from enum import IntEnum, StrEnum
-from typing import TypedDict, Required, NotRequired, List
+from enum import IntEnum
+from typing_extensions import TypedDict, Required, NotRequired, List, Union
+from ..str_enum import StrEnum
 from ..query_base import QueryBase, QueryParamsBase, PageInfoResParams
 from ..authentication import Authentication
 
@@ -54,8 +55,8 @@ class ProductOfferV2Node(StrEnum):
 
 
 class ProductOfferV2ResParams(TypedDict):
-    nodes: Required[List[ProductOfferV2Node | str]]
-    pageInfo: NotRequired[List[PageInfoResParams | str]]
+    nodes: Required[List[Union[ProductOfferV2Node, str]]]
+    pageInfo: NotRequired[List[Union[PageInfoResParams, str]]]
 
 
 class ProductOfferV2(QueryBase):

@@ -25,12 +25,15 @@ print(res)
 Todas as queries e mutations que não estão depreciados foram implementados, os 
 campos que foram depreciados não foram implementados.
 
+[![Downloads](https://static.pepy.tech/badge/saapi/month)](https://pepy.tech/project/saapi)
+[![Supported Versions](https://img.shields.io/pypi/pyversions/saapi.svg)](https://pypi.org/project/saapi)
+[![Contributors](https://img.shields.io/github/contributors/renangalvao/saapi.svg)](https://github.com/renangalvao/saapi/graphs/contributors)
 
 ## Instalação
 ```console
 $ pip install saapi
 ```
-Versão mínima do python 3.11.
+Versão mínima do python 3.9.
 
 
 ## Uso com tipos
@@ -98,4 +101,11 @@ client = SaAPI({
 })
 ```
 
+
+## Desenvolvimento
+Faça um clone, configure um ambiente virtual e instale ``pip install --editable .[all]``. Para fazer
+testes você deve utilizar o comando ``tox``. Tenha em mente que para testar em todas as versões você
+precisa tê-las instaladas e com acesso global/local. Particularmente utilizei o asdf[^2] para isso.
+
 [^1]: [Documentação](https://affiliate.shopee.com.br/open_api/home). É preciso estar logado para visualizar a documentação.
+[^2]: [asdf](https://asdf-vm.com/)

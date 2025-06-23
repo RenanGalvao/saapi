@@ -1,4 +1,4 @@
-from typing import TypedDict, Required, NotRequired, List
+from typing_extensions import TypedDict, Required, NotRequired, List, Union
 from ..query_base import PageInfoResParams
 from .report_query_base import ReportQueryBase, ReportQueryParamsBase, \
     ReportNode as ValidatedReportNode
@@ -10,8 +10,8 @@ class ValidatedReportQueryParams(ReportQueryParamsBase):
 
 
 class ValidatedReportResParams(TypedDict):
-    nodes: Required[List[ValidatedReportNode | str]]
-    pageInfo: NotRequired[List[PageInfoResParams | str]]
+    nodes: Required[List[Union[ValidatedReportNode, str]]]
+    pageInfo: NotRequired[List[Union[PageInfoResParams, str]]]
 
 
 class ValidatedReport(ReportQueryBase):

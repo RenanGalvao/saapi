@@ -1,5 +1,5 @@
-from enum import StrEnum
-from typing import TypedDict, Required, NotRequired, List
+from typing_extensions import TypedDict, Required, NotRequired, List, Union
+from ..str_enum import StrEnum
 from .report_query_base import ReportQueryBase, ReportQueryParamsBase, \
     ReportNode as ConversionReportNode
 from ..query_base import PageInfoResParams
@@ -81,8 +81,8 @@ class ConversionReportQueryParams(ReportQueryParamsBase):
 
 
 class ConversionReportResParams(TypedDict):
-    nodes: Required[List[ConversionReportNode | str]]
-    pageInfo: NotRequired[List[PageInfoResParams | str]]
+    nodes: Required[List[Union[ConversionReportNode, str]]]
+    pageInfo: NotRequired[List[Union[PageInfoResParams, str]]]
 
 
 class ConversionReport(ReportQueryBase):
