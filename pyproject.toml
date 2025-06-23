@@ -10,7 +10,7 @@ authors = [
 ]
 description = "Simple wrapper for Shopee Affiliate API."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 keywords = ["Shopee", "API"]
 license = "MIT"
 classifiers = [
@@ -19,6 +19,8 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -26,7 +28,8 @@ classifiers = [
     "Topic :: Utilities"
 ]
 dependencies = [
-    "requests"
+    "requests",
+    "typing_extensions"
 ]
 dynamic = ["version"]
 
@@ -39,13 +42,12 @@ Source = "https://github.com/RenanGalvao/saapi"
 [project.optional-dependencies]
 tests = [
     "pytest",
-    "pytest-mock"
-]
-cover = [
+    "pytest-mock",
     "pytest-cov",
+    "tox"
 ]
 all = [
-    "saapi[tests,cover]"
+    "saapi[tests]"
 ]
 
 

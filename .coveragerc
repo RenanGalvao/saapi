@@ -1,0 +1,6 @@
+[run]
+source =
+    src/saapi
+omit =
+    */tests/*
+    */__init__.py

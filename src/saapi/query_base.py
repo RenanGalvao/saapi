@@ -1,7 +1,7 @@
 import json
 import requests
-from enum import StrEnum
-from typing import TypedDict, NotRequired, List, Dict, Any
+from typing_extensions import TypedDict, NotRequired, List, Dict, Any, Union
+from .str_enum import StrEnum
 from .authentication import Authentication
 from .errors import SaAPIError
 
@@ -110,8 +110,8 @@ class QueryBase:
 
     def _get_res_params(
         self,
-        params: Dict | List,
-        whitelist: Dict | List,
+        params: Union[Dict, List],
+        whitelist: Union[Dict, List],
         key: str = None
     ):
         if not params:
@@ -150,7 +150,7 @@ class QueryBase:
             return type(source[key]) is dict or type(source[key]) is list
         return type(source[key]) is dict
 
-    def _fields_check(self, source: Dict | List, whitelist: Dict | List):
+    def _fields_check(self, source: Union[Dict, List], whitelist: [Dict, List]):
         any_value_is_valid = whitelist is None
         if any_value_is_valid:
             return

@@ -1,5 +1,5 @@
 from functools import cached_property
-from typing import TypedDict, Required, NotRequired
+from typing_extensions import TypedDict, Required, NotRequired
 from .authentication import Authentication
 from .countries import Country
 from .queries.queries import Queries
